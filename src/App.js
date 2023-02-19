@@ -11,6 +11,11 @@ import Expenses from './components/Expenses/Expenses';
     { id:'e3', title: 'Car maintenance', amount: 900.56, date: new Date(2021,4,5) }
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  }
+
   //Escrevendo código sem o JSX. preciso importar o React:
   // return React.createElement(
   //   'div',
@@ -19,10 +24,12 @@ import Expenses from './components/Expenses/Expenses';
   //   "Ĺet's get started!"),
   //   React.createElement(Expenses, {items: expenses},)
   // );
+
+
 //Código em JSX:
   return (
     <div> 
-      <NewExpense />
+      <NewExpense onAddExpense = {addExpenseHandler}/>
       <Expenses items = {expenses} />
     </div>
   );
